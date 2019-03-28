@@ -217,7 +217,7 @@ def genTextImg():
 		tmp.append(ImageFont.truetype('./font/造字工房尚黑G0v1纤细长体.otf',size))
 		fonts.append(tmp)
 
-	outputPath = 'data/train/'
+	outputPath = 'data/train'
 	txtPath = "corpus/train/"
         txtFiles = os.listdir(txtPath)
         index=0
@@ -259,7 +259,8 @@ def genTextImg():
                             print index,newline,len(newline)
                             filename =  str(index) + ".jpg"
                             #writePath =outputPath +'/'+str(len(newline))+'/'+ filename
-                            writePath ='/home/yuz/lijiahui/ocr/background_judge/sentencedata/1/ex_' +filename
+                            writePath =os.path.join(outputPath,filename)
+                            #writePath ='/home/yuz/lijiahui/ocr/background_judge/sentencedata/1/ex_' +filename
                             Gid = random.randint(0,len(Gs)-1)
                             fontid = random.randint(0,len(fonts[Gid])-1)
                             #bgImg=cv2.imread('data/train/2011060409214653.jpg',1)
